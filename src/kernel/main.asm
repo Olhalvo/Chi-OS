@@ -44,13 +44,16 @@ main:
 
     mov si, msg_hello
     call puts
-    
+        
     hlt
 
-.halt:
+.halt:      
     jmp .halt;
 
-msg_hello: db 'Hello world!', ENDL, 0
+
+
+msg_hello: db 'Booting CHIos...', ENDL, 0
+msg_hlt: db 'Halted', ENDL, 0
 
 times 510-($-$$)db 0;
 dw 0AA55h
